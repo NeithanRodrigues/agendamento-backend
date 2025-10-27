@@ -1,17 +1,17 @@
-## ⚙️ FASE 1 — CRIAÇÃO DO PROJETO E AMBIENTE
+## ⚙️ FASE 1 — CRIAÇÃO DO PROJETO E AMBIENTE✅⬜
 
 ### 🧱 1. Estrutura inicial do backend
 
-- [x]  Criar repositório no GitHub → `agendamento-backend`
-- [x]  Clonar repositório localmente
-- [x]  Instalar CLI do NestJS globalmente:
+- ✅  Criar repositório no GitHub → `agendamento-backend`
+- ✅  Clonar repositório localmente
+- ✅  Instalar CLI do NestJS globalmente:
     
     ```bash
     npm i -g @nestjs/cli
     
     ```
     
-- [x]  Criar projeto NestJS:
+- ✅  Criar projeto NestJS:
     
     ```bash
     nest new backend
@@ -19,7 +19,7 @@
     
     ```
     
-- [x]  Instalar dependências principais:
+- ✅  Instalar dependências principais:
     
     ```bash
     npm install @nestjs/config @nestjs/jwt @nestjs/passport passport passport-jwt bcryptjs
@@ -28,7 +28,7 @@
     
     ```
     
-- [x]  Criar arquivo `.env`:
+- ✅  Criar arquivo `.env`:
     
     ```
     DATABASE_URL="postgresql://usuario:senha@localhost:5432/agendamento"
@@ -37,8 +37,8 @@
     
     ```
     
-- [x]  Adicionar `.env` ao `.gitignore`
-- [x]  Rodar servidor para testar:
+- ✅  Adicionar `.env` ao `.gitignore`
+- ✅  Rodar servidor para testar:
     
     ```bash
     npm run start:dev
@@ -52,15 +52,15 @@
 
 ### 🐘 2.1. PostgreSQL + Prisma
 
-- [ ]  Criar banco de dados `agendamento` (local ou via Railway / Neon / Supabase)
-- [ ]  Inicializar Prisma:
+- ⬜  Criar banco de dados `agendamento` (local ou via Railway / Neon / Supabase)
+- ⬜  Inicializar Prisma:
     
     ```bash
     npx prisma init
     
     ```
     
-- [ ]  Atualizar `schema.prisma` com as tabelas:
+- ⬜  Atualizar `schema.prisma` com as tabelas:
     - `clientes`
     - `usuarios_empresa`
     - `comercios`
@@ -70,14 +70,14 @@
     - `agendamentos`
     - `pagamentos`
     - `avaliacoes`
-- [ ]  Rodar migração:
+- ⬜  Rodar migração:
     
     ```bash
     npx prisma migrate dev --name init
     
     ```
     
-- [ ]  Testar conexão:
+- ⬜  Testar conexão:
     
     ```bash
     npx prisma studio
@@ -91,7 +91,7 @@
 
 ### 🚀 3.1. Estrutura de módulos
 
-- [ ]  Criar módulo global de banco de dados (Prisma):
+- ⬜  Criar módulo global de banco de dados (Prisma):
     
     ```bash
     nest g module prisma
@@ -99,8 +99,8 @@
     
     ```
     
-- [ ]  Implementar `PrismaService` com `onModuleInit` e `onModuleDestroy`
-- [ ]  Estrutura recomendada:
+- ⬜  Implementar `PrismaService` com `onModuleInit` e `onModuleDestroy`
+- ⬜  Estrutura recomendada:
     
     ```
     src/
@@ -129,7 +129,7 @@
 
 ### 👥 4.1. Módulo de autenticação (login e registro)
 
-- [x]  Criar módulos:
+- ✅  Criar módulos:
     
     ```bash
     nest g module auth
@@ -138,18 +138,18 @@
     
     ```
     
-- [ ]  Adicionar `bcryptjs` para hash de senha
-- [ ]  Criar **registro e login separados**:
+- ⬜  Adicionar `bcryptjs` para hash de senha
+- ⬜  Criar **registro e login separados**:
     - `POST /auth/register/cliente` → cria um cliente
     - `POST /auth/register/empresa` → cria um usuárioEmpresa
     - `POST /auth/login` → login genérico (retorna token e tipo)
-- [ ]  Gerar token JWT com:
+- ⬜  Gerar token JWT com:
     - `id`
     - `tipo_usuario` (`CLIENTE` ou `EMPRESA`)
     - `nome`
-- [ ]  Criar `JwtAuthGuard` e `RolesGuard`
-- [ ]  Criar decorator `@Roles('CLIENTE')` / `@Roles('EMPRESA')`
-- [ ]  Proteger rotas específicas:
+- ⬜  Criar `JwtAuthGuard` e `RolesGuard`
+- ⬜  Criar decorator `@Roles('CLIENTE')` / `@Roles('EMPRESA')`
+- ⬜  Proteger rotas específicas:
     - `CLIENTE` → pode agendar, avaliar
     - `EMPRESA` → pode gerenciar comércio, serviços e funcionários
 
@@ -159,7 +159,7 @@
 
 ### 🙋 5.1. Módulo de clientes
 
-- [x]  Criar módulo:
+- ✅  Criar módulo:
     
     ```bash
     nest g module clientes
@@ -168,10 +168,10 @@
     
     ```
     
-- [ ]  Rotas:
+- ⬜  Rotas:
     - `GET /clientes/:id` → visualizar perfil
     - `PUT /clientes/:id` → editar informações
-- [ ]  Clientes poderão:
+- ⬜  Clientes poderão:
     - Buscar comércios
     - Agendar serviços
     - Avaliar atendimentos
@@ -182,7 +182,7 @@
 
 ### 🧾 6.1. UsuáriosEmpresa
 
-- [x]  Criar módulo:
+- ✅  Criar módulo:
     
     ```bash
     nest g module usuarios-empresa
@@ -191,15 +191,15 @@
     
     ```
     
-- [ ]  Relacionar `usuarios_empresa` → `comercios` (1:1)
-- [ ]  Rotas:
+- ⬜  Relacionar `usuarios_empresa` → `comercios` (1:1)
+- ⬜  Rotas:
     - `GET /empresa/:id` → ver perfil do dono
     - `PUT /empresa/:id` → editar dados
     - `GET /empresa/:id/comercio` → retornar comércio vinculado
 
 ### 💈 6.2. Comercios
 
-- [x]  Criar módulo:
+- ✅  Criar módulo:
     
     ```bash
     nest g module comercios
@@ -208,18 +208,18 @@
     
     ```
     
-- [ ]  Rotas:
+- ⬜  Rotas:
     - `POST /comercios` → criar comércio (somente `EMPRESA`)
     - `GET /comercios` → listar todos (busca pública)
     - `GET /comercios/:id` → ver detalhes
     - `PUT /comercios/:id` → editar
-- [ ]  Relacionar com `usuarios_empresa.id`
+- ⬜  Relacionar com `usuarios_empresa.id`
 
 ---
 
 ## 💇 FASE 7 — SERVIÇOS
 
-- [x]  Criar módulo:
+- ✅  Criar módulo:
     
     ```bash
     nest g module servicos
@@ -228,12 +228,12 @@
     
     ```
     
-- [ ]  Rotas:
+- ⬜  Rotas:
     - `POST /servicos` → criar serviço (empresa)
     - `GET /servicos/:id_comercio` → listar serviços do comércio
     - `PUT /servicos/:id` → editar serviço
     - `DELETE /servicos/:id` → excluir serviço
-- [ ]  Associar com `comercio_id`
+- ⬜  Associar com `comercio_id`
 
 ---
 
@@ -241,7 +241,7 @@
 
 ### 👷 8.1. Funcionários
 
-- [x]  Criar módulo:
+- ✅  Criar módulo:
     
     ```bash
     nest g module funcionarios
@@ -250,7 +250,7 @@
     
     ```
     
-- [ ]  Rotas:
+- ⬜  Rotas:
     - `POST /funcionarios` → cadastrar funcionário
     - `GET /funcionarios/:id` → visualizar funcionário
     - `PUT /funcionarios/:id` → editar
@@ -258,8 +258,8 @@
 
 ### 🔗 8.2. Relacionamento funcionário x serviço
 
-- [ ]  Criar tabela `funcionario_servico` no Prisma
-- [ ]  Rotas:
+- ⬜  Criar tabela `funcionario_servico` no Prisma
+- ⬜  Rotas:
     - `POST /funcionarios/:id/servicos` → vincular serviço
     - `GET /funcionarios/:id/servicos` → listar serviços oferecidos
     - `DELETE /funcionarios/:id/servico/:id_servico` → desvincular
@@ -270,7 +270,7 @@
 
 ### 🕒 9.1. Agendamentos
 
-- [x]  Criar módulo:
+- ✅  Criar módulo:
     
     ```bash
     nest g module agendamentos
@@ -279,18 +279,18 @@
     
     ```
     
-- [ ]  Rotas:
+- ⬜  Rotas:
     - `POST /agendamentos` → criar agendamento (cliente)
     - `GET /agendamentos/cliente/:id` → listar do cliente
     - `GET /agendamentos/comercio/:id` → listar do comércio
     - `PUT /agendamentos/:id/status` → atualizar status
-- [ ]  Lógica:
+- ⬜  Lógica:
     - Verificar disponibilidade do funcionário
     - Calcular `hora_fim` a partir da duração do serviço
 
 ### 📆 9.2. Horários disponíveis
 
-- [x]  Criar módulo:
+- ✅  Criar módulo:
     
     ```bash
     nest g module horarios
@@ -299,16 +299,16 @@
     
     ```
     
-- [ ]  Rotas:
+- ⬜  Rotas:
     - `POST /horarios` → cadastrar disponibilidade
     - `GET /horarios/funcionario/:id` → listar horários
-- [ ]  Bloquear horário automaticamente após agendamento
+- ⬜  Bloquear horário automaticamente após agendamento
 
 ---
 
 ## 💰 FASE 10 — PAGAMENTOS (OPCIONAL NO MVP)
 
-- [ ]  Criar módulo:
+- ⬜  Criar módulo:
     
     ```bash
     nest g module pagamentos
@@ -317,16 +317,16 @@
     
     ```
     
-- [ ]  Rotas:
+- ⬜  Rotas:
     - `POST /pagamentos` → iniciar pagamento
     - `GET /pagamentos/:id_agendamento` → ver status
-- [ ]  Integrar futuramente com **Stripe** ou **Mercado Pago**
+- ⬜  Integrar futuramente com **Stripe** ou **Mercado Pago**
 
 ---
 
 ## ⭐ FASE 11 — AVALIAÇÕES (RECURSO EXTRA)
 
-- [x]  Criar módulo:
+- ✅  Criar módulo:
     
     ```bash
     nest g module avaliacoes
@@ -335,10 +335,10 @@
     
     ```
     
-- [ ]  Rotas:
+- ⬜  Rotas:
     - `POST /avaliacoes` → cliente avalia serviço
     - `GET /avaliacoes/comercio/:id` → listar avaliações
-- [ ]  Relacionar com `id_cliente` e `id_comercio`
+- ⬜  Relacionar com `id_cliente` e `id_comercio`
 
 ---
 
@@ -346,14 +346,14 @@
 
 ### 🧾 12.1. Testes
 
-- [ ]  Testar rotas no **Insomnia / Postman**
-- [ ]  Testar fluxo:
+- ⬜  Testar rotas no **Insomnia / Postman**
+- ⬜  Testar fluxo:
     1. Criar cliente
     2. Criar usuárioEmpresa
     3. Criar comércio e serviços
     4. Cadastrar funcionário
     5. Vincular serviço → agendar → concluir
-- [ ]  Criar testes unitários com Jest:
+- ⬜  Criar testes unitários com Jest:
     
     ```bash
     npm run test
@@ -363,23 +363,23 @@
 
 ### 🚀 12.2. Deploy
 
-- [ ]  Gerar build:
+- ⬜  Gerar build:
     
     ```bash
     npm run build
     
     ```
     
-- [ ]  Fazer deploy (Render / Railway / VPS)
-- [ ]  Configurar `.env` no ambiente remoto
-- [ ]  Rodar migrations:
+- ⬜  Fazer deploy (Render / Railway / VPS)
+- ⬜  Configurar `.env` no ambiente remoto
+- ⬜  Rodar migrations:
     
     ```bash
     npx prisma migrate deploy
     
     ```
     
-- [ ]  Validar API no ambiente remoto
+- ⬜  Validar API no ambiente remoto
 
 ---
 
@@ -387,33 +387,33 @@
 
 ### 🧱 1. Preparação
 
-- [ ]  Criar projeto Next.js:
+- ⬜  Criar projeto Next.js:
     
     ```bash
     npx create-next-app@latest frontend --typescript
     
     ```
     
-- [ ]  Instalar TailwindCSS
-- [ ]  Criar `.env.local` com `NEXT_PUBLIC_API_URL`
+- ⬜  Instalar TailwindCSS
+- ⬜  Criar `.env.local` com `NEXT_PUBLIC_API_URL`
 
 ### 🔗 2. Conexão com backend
 
-- [ ]  Criar `src/lib/api.ts` com Axios
-- [ ]  Testar rota `/ping` do backend
+- ⬜  Criar `src/lib/api.ts` com Axios
+- ⬜  Testar rota `/ping` do backend
 
 ### 💇 3. Páginas principais
 
-- [ ]  `/` — busca por cidade e serviços
-- [ ]  `/comercio/[id]` — perfil do comércio
-- [ ]  `/login` e `/cadastro` (separar abas: Cliente / Empresa)
-- [ ]  `/painel` — painel do dono do comércio
-- [ ]  `/agendamentos` — lista do cliente
+- ⬜  `/` — busca por cidade e serviços
+- ⬜  `/comercio/[id]` — perfil do comércio
+- ⬜  `/login` e `/cadastro` (separar abas: Cliente / Empresa)
+- ⬜  `/painel` — painel do dono do comércio
+- ⬜  `/agendamentos` — lista do cliente
 
 ### 🧾 4. Fluxo principal
 
-- [ ]  **Cliente:** login → busca → selecionar serviço → agendar → confirmar
-- [ ]  **UsuárioEmpresa:** login → gerenciar serviços, funcionários e horários
+- ⬜  **Cliente:** login → busca → selecionar serviço → agendar → confirmar
+- ⬜  **UsuárioEmpresa:** login → gerenciar serviços, funcionários e horários
 
 ---
 
